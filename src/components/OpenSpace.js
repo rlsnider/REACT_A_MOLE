@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
 import MoleHill from '../molehill.png'
 
-const EmptySlot = (props) => {
+const OpenSpace = (props) => {
 
     useEffect(() => {
-        let randSeconds = Math.ceil(Math.random() * 5000)
+        let randSeconds = Math.ceil(Math.random() * 3000)
         let timer = setTimeout(() => {
             props.toggle(true)
         }, randSeconds)
@@ -17,4 +17,4 @@ const EmptySlot = (props) => {
     )
 }
 
-export default EmptySlot
+export default OpenSpace

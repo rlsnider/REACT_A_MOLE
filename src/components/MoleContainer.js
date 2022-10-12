@@ -1,16 +1,19 @@
 import {useState } from 'react'
 import Mole from './Mole'
-import EmptySlot from './EmptySlot'
+import OpenSpace from './OpenSpace'
 
 const MoleContainer = (props) => {
-    let [theMole, setTheMole] = useState(false)
+    let [aMole, setAMole] = useState(false)
 
     const handleClick = (e) => {
         props.setScore(props.score +1)
-        setTheMole(false)
+        setAMole(false)
     }
 
-    let displayMole = theMole ? <Mole setScore={props.setScore} toggle={setTheMole} handleClick={handleClick} /> : <EmptySlot toggle={setTheMole} />
+    let displayMole = aMole 
+    ? <Mole setScore={props.setScore} toggle={setAMole} handleClick={handleClick} /> 
+    : <OpenSpace toggle={setAMole} />
+    
     return ( 
         <div style={{'display': 'inline-block', 'width': '30vw'}}>
             {displayMole}
